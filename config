@@ -72,7 +72,7 @@ output DP-1 mode 2560x1440@170.000Hz
     bindsym $mod+Shift+c kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+d exec rofi -show drun -theme purple
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -199,6 +199,9 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+
+### Window Rules
+for_window [title="Picture-in-Picture"] floating enable
 #
 # Status Bar:
 #
