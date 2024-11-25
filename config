@@ -54,8 +54,9 @@ output DP-1 mode 2560x1440@170.000Hz
 #       tap enabled
 #       natural_scroll enabled
 #       middle_emulation enabled
-#   }
-    input * {
+#    * {
+#
+input * {
     xkb_layout "gb"
 }
 # You can get the names of your inputs by running: swaymsg -t get_inputs
@@ -220,5 +221,11 @@ bar {
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
+
+### Startup Apps
+exec swaymsg 'workspace 1; exec /home/jack/.local/share/AppImage/ZenBrowser.AppImage'
+exec swaymsg 'workspace 1; exec /home/jack/Applications/Obsidian/Obsidian.AppImage'
+exec swaymsg 'workspace 1; exec /home/jack/Applications/Todoist/Todoist.AppImage'
+
 
 include /etc/sway/config.d/*
