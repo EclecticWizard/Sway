@@ -20,6 +20,7 @@ set $term konsole
 # on the original workspace that the command was run on.
 set $menu dmenu_path | wmenu | xargs swaymsg exec --
 
+gaps inner 10
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -27,7 +28,7 @@ output * bg '/home/jack/Pictures/Cyberpunk 2077/photomode_10112024_163014.png' f
 #
 # Example configuration:
 #
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+output DP-1 mode 2560x1440@170.000Hz
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -54,7 +55,9 @@ output * bg '/home/jack/Pictures/Cyberpunk 2077/photomode_10112024_163014.png' f
 #       natural_scroll enabled
 #       middle_emulation enabled
 #   }
-#
+    input * {
+    xkb_layout "gb"
+}
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
