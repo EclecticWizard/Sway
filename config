@@ -185,6 +185,7 @@ input * {
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
     bindsym XF86AudioMute exec playerctl play-pause
     bindsym Mod1+L exec swaylock -f -i /home/jack/Pictures/lockscreens/cyberpunk.png
+    bindsym $mod+Shift+V exec pavucontrol
 #
 # Resizing containers:
 #
