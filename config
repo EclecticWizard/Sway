@@ -185,7 +185,7 @@ input * {
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
     bindsym XF86AudioMute exec playerctl play-pause
     bindsym Mod1+L exec swaylock -f -i /home/jack/Pictures/lockscreens/cyberpunk.png
-    bindsym $mod+Shift+V exec pavucontrol
+    bindsym $mod+Shift+V exec --no-startup-id pavucontrol
 #
 # Resizing containers:
 #
@@ -214,6 +214,7 @@ bindsym $mod+r mode "resize"
 
 ### Window Rules
 for_window [title="Picture-in-Picture"] floating enable
+for_window [app_id="pavucontrol"] floating enable
 
 #
 # Status Bar:
