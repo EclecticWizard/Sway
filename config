@@ -240,5 +240,9 @@ exec swaymsg 'workspace 1; exec /home/jack/.local/share/AppImage/ZenBrowser.AppI
 exec swaymsg 'workspace 1; exec /home/jack/Applications/Obsidian/Obsidian.AppImage'
 exec swaymsg 'workspace 1; exec /home/jack/Applications/Todoist/Todoist.AppImage'
 exec --no-startup-id 'openrgb -p Purple.orp --startminimized'
+exec 'wlsunset_wrapper.sh'
+exec lxpolkit &
+
+
 
 include /etc/sway/config.d/*
