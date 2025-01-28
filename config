@@ -20,6 +20,8 @@ set $term ghostty
 # on the original workspace that the command was run on.
 set $menu dmenu_path | wmenu | xargs swaymsg exec --
 
+set $fileExplorer thunar
+
 gaps inner 10
 ### Output configuration
 #
@@ -150,8 +152,8 @@ input * {
 
     # Switch the current container between different layout styles
     bindsym $mod+s sticky toggle
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+shift+w layout tabbed
+    bindsym $mod+shift+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -186,6 +188,7 @@ input * {
     bindsym XF86AudioMute exec playerctl play-pause
     bindsym Mod1+L exec swaylock -f -i /home/jack/Pictures/lockscreens/cyberpunk.png
     bindsym $mod+Shift+V exec --no-startup-id pavucontrol
+    bindsym $mod+E exec $fileExplorer
 #
 # Resizing containers:
 #
