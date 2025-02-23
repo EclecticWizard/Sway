@@ -239,9 +239,10 @@ bar {
 }
 
 ### Startup Apps
-exec swaymsg 'workspace 1; exec /home/jack/.local/share/AppImage/ZenBrowser.AppImage'
-exec swaymsg 'workspace 1; exec /home/jack/Applications/Obsidian/Obsidian.AppImage'
+exec swaymsg 'workspace 2; exec /home/jack/Applications/Obsidian/Obsidian.AppImage'
+exec swaymsg 'workspace 1; exec emacs'
 exec swaymsg 'workspace 1; exec /home/jack/Applications/Todoist/Todoist.AppImage'
+exec swaymsg 'workspace 1; exec /home/jack/.local/share/AppImage/ZenBrowser.AppImage'
 exec --no-startup-id 'openrgb -p Purple.orp --startminimized'
 exec 'wlsunset_wrapper.sh'
 exec lxpolkit &
