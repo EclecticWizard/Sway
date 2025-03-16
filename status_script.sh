@@ -11,13 +11,12 @@ while true; do
         # Get the description of the active sink
     sink_description=$(pactl list sinks | awk -v sink="$active_sink" '
          /^Sink #/ {is_target = $2 == "#"sink}
-         /Description:/ && is_target {gsub(/^.*Description: /, ""); print; exit}
-    ')
+         /Description:/ && is_target {gsub(/^.*Description: /, ""); print; exit}')
     pactl set-default-sink $active_sink
     freespace=$(df "$HOME" --output=pcent | cut -d: -f2 | xargs)
     current_time=$(date +"%Y-%m-%d %X")
     volumeSpeakers=$(pactl get-sink-volume "$active_sink" | awk -F '/' '{print $2}' | sed 's/^[ \t]*//;s/[ \t]*$//')
 
-    echo "$media_status | 🔊 $volumeSpeakers $sink_description | 💾 $freespace | $current_time"
+    echo "$media_status | $sink_description 🔊 $volumeSpeakers | 💾 $freespace | $current_time"
     sleep 0.1
 done
