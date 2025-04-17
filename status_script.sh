@@ -16,7 +16,7 @@ while true; do
     freespace=$(df "$HOME" --output=pcent | cut -d: -f2 | xargs)
     current_time=$(date +"%Y-%m-%d %X")
     volumeSpeakers=$(pactl get-sink-volume "$active_sink" | awk -F '/' '{print $2}' | sed 's/^[ \t]*//;s/[ \t]*$//')
-
-    echo "$media_status | $sink_description 🔊 $volumeSpeakers | 💾 $freespace | $current_time"
+    keyboardInput=$(swaymsg -t get_inputs | jq -r '[.[] | select(.type=="keyboard") | .xkb_active_layout_name][0]')
+    echo "$media_status | $sink_description 🔊 $volumeSpeakers | ⌨️ $keyboardInput | 💾 $freespace | $current_time"
     sleep 0.1
 done
