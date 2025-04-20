@@ -248,7 +248,9 @@ exec swaymsg 'workspace 1; exec /home/jack/Applications/Todoist/Todoist.AppImage
 exec swaymsg 'workspace 1; exec /home/jack/.local/share/AppImage/ZenBrowser.AppImage'
 exec --no-startup-id 'openrgb -p Purple.orp --startminimized'
 exec 'wlsunset_wrapper.sh'
+exec "flatpak run com.github.zocker_160.SyncThingy/x86_64/stable"
 exec lxpolkit &
+
 
 
 
