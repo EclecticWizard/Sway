@@ -185,13 +185,16 @@ input type:keyboard {
 # Custom binds
 #
     bindsym $mod+Shift+s exec grimshot --cursor copy area
-    bindsym $mod+Shift+d exec grimshot --cursor copy area save ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png && notify-send "Screenshot Saved" "Screenshot saved in ~/Pictures/Screenshots"
+    bindsym $mod+Shift+d exec grimshot --cursor copy area save "~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png" && notify-send "Screenshot Saved" "Screenshot saved in ~/Pictures/Screenshots"
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
     bindsym XF86AudioMute exec playerctl play-pause
-    bindsym Mod1+L exec swaylock -f -i /home/jack/Pictures/lockscreens/cyberpunk.png
+    #bindsym Mod1+L exec swaylock -f -i /home/jack/Pictures/lockscreens/cyberpunk.png
     bindsym $mod+Shift+V exec --no-startup-id pavucontrol
     bindsym $mod+E exec $fileExplorer
+    bindsym Mod1+Ctrl+Delete exec /home/jack/.config/sway/rofi_shutdown_menu.sh
+    bindsym $mod+o exec "swayimg /home/jack/Pictures/Sofle/base.png --position=1500,1800"
+
 #
 # Resizing containers:
 #
@@ -244,7 +247,6 @@ bar {
 ### Startup Apps
 exec swaymsg 'workspace 2; exec /home/jack/Applications/Obsidian/Obsidian.AppImage'
 exec swaymsg 'workspace 1; exec emacs'
-exec swaymsg 'workspace 1; exec /home/jack/Applications/Todoist/Todoist.AppImage'
 exec swaymsg 'workspace 1; exec /home/jack/.local/share/AppImage/ZenBrowser.AppImage'
 exec --no-startup-id 'openrgb -p Purple.orp --startminimized'
 exec 'wlsunset_wrapper.sh'
