@@ -21,6 +21,7 @@ set $term ghostty
 set $menu dmenu_path | wmenu | xargs swaymsg exec --
 
 set $fileExplorer thunar
+set $browser flatpak run app.zen_browser.zen
 
 gaps inner 10
 ### Output configuration
@@ -247,7 +248,7 @@ bar {
 ### Startup Apps
 exec swaymsg 'workspace 2; exec /home/jack/Applications/Obsidian/Obsidian.AppImage'
 exec swaymsg 'workspace 1; exec emacs'
-exec swaymsg 'workspace 1; exec /home/jack/.local/share/AppImage/ZenBrowser.AppImage'
+exec swaymsg 'workspace 1; exec $browser'
 exec --no-startup-id 'openrgb -p Purple.orp --startminimized'
 exec 'wlsunset_wrapper.sh'
 exec "flatpak run com.github.zocker_160.SyncThingy/x86_64/stable"
