@@ -60,7 +60,7 @@ output DP-1 mode 2560x1440@170.000Hz
 #    * {
 #
 input type:keyboard {
-    xkb_layout "gb,gb(colemak),us"
+    xkb_layout "us,gb,gb(colemak)"
 }
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
