@@ -27,7 +27,7 @@ gaps inner 10
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg '/home/jack/Pictures/the-elder-scrolls-v-skyrim-4k-mg.jpg' fill
+output * bg '/home/jack/Pictures/Starlabs/ce61e4f4a8-f068a546f93bc4be83d8.jpeg' fill
 #
 # Example configuration:
 #
@@ -253,7 +253,7 @@ exec 'wlsunset_wrapper.sh'
 exec "flatpak run com.github.zocker_160.SyncThingy/x86_64/stable"
 exec "flatpak run com.dropbox.Client/x86_64/stable"
 exec lxpolkit &
-
+exec vorta
 
 
 
