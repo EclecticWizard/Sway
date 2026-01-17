@@ -225,6 +225,7 @@ bindsym $mod+r mode "resize"
 ### Window Rules
 for_window [title="Picture-in-Picture"] floating enable
 for_window [app_id="pavucontrol"] floating enable
+default_border pixel 5 # Disables title bar
 
 #
 # Status Bar:
