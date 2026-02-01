@@ -21,13 +21,13 @@ set $term kitty
 set $menu dmenu_path | wmenu | xargs swaymsg exec --
 
 set $fileExplorer thunar
-set $browser flatpak run app.zen_browser.zen
+set $browser ~/Applications/zen/zen
 
 gaps inner 10
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg '/home/jack/Pictures/Starlabs/ce61e4f4a8-f068a546f93bc4be83d8.jpeg' fill
+output * bg '/home/jack/Pictures/Obsidian.png' fill
 #
 # Example configuration:
 #
@@ -247,15 +247,18 @@ bar {
 }
 
 ### Startup Apps
-exec swaymsg 'workspace 2; exec /home/jack/Applications/Obsidian/Obsidian.AppImage'
+exec swaymsg 'workspace 2; exec /home/jack/Applications/Obsidian.AppImage'
 exec swaymsg 'workspace 1; exec $browser'
-exec --no-startup-id 'openrgb -p Purple.orp --startminimized'
+exec --no-startup-id 'openrgb -p purple.orp --startminimized'
 exec 'wlsunset_wrapper.sh'
 exec "flatpak run com.github.zocker_160.SyncThingy/x86_64/stable"
 exec "flatpak run com.dropbox.Client/x86_64/stable"
 exec lxpolkit &
 exec vorta
-
-
+exec pipewire
+exec_always gvfsd
+exec_always gvfsd-fuse
+exec_always gvfsd-smb
+exec syncthing
 
 include /etc/sway/config.d/*
