@@ -3,7 +3,7 @@
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
-
+exec dbus-update-activation-environment DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -27,7 +27,7 @@ gaps inner 10
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg '/home/jack/Pictures/Obsidian.png' fill
+output * bg '/home/jack/Pictures/voidwall-main/assets/walls/11.png' fill
 #
 # Example configuration:
 #
@@ -193,7 +193,7 @@ input type:keyboard {
     #bindsym Mod1+L exec swaylock -f -i /home/jack/Pictures/lockscreens/cyberpunk.png
     bindsym $mod+Shift+V exec --no-startup-id pavucontrol
     bindsym $mod+E exec $fileExplorer
-    bindsym Mod1+Ctrl+Delete exec /home/jack/.config/sway/rofi_shutdown_menu.sh
+    bindsym Mod1+Ctrl+Delete exec dm-tool switch-to-greeter
     bindsym $mod+o exec "swayimg /home/jack/Pictures/Sofle/base.png --position=1500,1800"
 
 #
@@ -247,18 +247,19 @@ bar {
 }
 
 ### Startup Apps
-exec swaymsg 'workspace 2; exec /home/jack/Applications/Obsidian.AppImage'
 exec swaymsg 'workspace 1; exec $browser'
+exec swaymsg 'workspace 1; exec /home/jack/Applications/Obsidian.AppImage'
 exec --no-startup-id 'openrgb -p purple.orp --startminimized'
 exec 'wlsunset_wrapper.sh'
-exec "flatpak run com.github.zocker_160.SyncThingy/x86_64/stable"
-exec "flatpak run com.dropbox.Client/x86_64/stable"
 exec lxpolkit &
 exec vorta
 exec pipewire
+exec pipewire-pulse
 exec_always gvfsd
 exec_always gvfsd-fuse
 exec_always gvfsd-smb
-exec syncthing
+exec syncthing -no-browser
+exec blueman-applet
+exec dropbox start
 
 include /etc/sway/config.d/*
