@@ -17,6 +17,6 @@ while true; do
     current_time=$(date +"%Y-%m-%d %X")
     volumeSpeakers=$(pactl get-sink-volume "$active_sink" | awk -F '/' '{print $2}' | sed 's/^[ \t]*//;s/[ \t]*$//')
     keyboardInput=$(swaymsg -t get_inputs | jq -r '[.[] | select(.type=="keyboard") | .xkb_active_layout_name][0]')
-    echo "$media_status | $sink_description 🔊 $volumeSpeakers | ⌨️ $keyboardInput | 💾 $freespace | $current_time"
+    echo "$(cat /tmp/wttr_cache) | $sink_description 🔊 $volumeSpeakers | ⌨️ $keyboardInput | 💾 $freespace | $current_time"
     sleep 0.1
 done
