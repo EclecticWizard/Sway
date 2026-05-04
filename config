@@ -27,7 +27,7 @@ gaps inner 10
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg '/home/jack/Pictures/pe-concept-encampment.png' fill
+output * bg '/home/jack/Pictures/current_wallpaper/*' fill
 #
 # Example configuration:
 #
