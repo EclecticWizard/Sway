@@ -21,7 +21,8 @@ set $term kitty
 set $menu dmenu_path | wmenu | xargs swaymsg exec --
 
 set $fileExplorer thunar
-set $browser ~/Applications/zen/zen
+# set $browser ~/Applications/zen/zen
+set $browser ~/AppImages/helium.appimage
 
 gaps inner 10
 ### Output configuration
@@ -79,7 +80,7 @@ input type:keyboard {
     bindsym $mod+Shift+c kill
 
     # Start your launcher
-    bindsym $mod+d exec rofi -show drun -theme purple
+    bindsym $mod+d exec fuzzel
 
 
     # Drag floating windows by holding down $mod and left mouse button.
@@ -224,6 +225,7 @@ bindsym $mod+r mode "resize"
 
 ### Window Rules
 for_window [title="Picture-in-Picture"] floating enable
+for_window [title="Picture-in-picture"] floating enable
 for_window [app_id="pavucontrol"] floating enable
 default_border pixel 5 # Disables title bar
 
@@ -232,9 +234,10 @@ default_border pixel 5 # Disables title bar
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
+    # swaybar_command waybar
     position top
 
-    # When the status_command prints a new line to stdout, swaybar updates.
+# When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     status_command ~/.config/sway/status_script.sh
 
